@@ -1,1 +1,59 @@
 @import "./styles/fonts.scss";
+
+body {
+    font-family: Graphik, sans-serif;
+}
+
+.card {
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: #5031AA;
+    height: 400px;
+    width: 300px;
+    padding: 1.5rem;
+    transition: .3s;
+    @media (max-width: 350px) {
+        width: auto;
+        height: auto;
+        min-height: 400px;
+    }
+    .title{
+        padding-bottom: 1.5rem;
+        h2 {
+            margin: 1rem 0;
+        }
+    }
+    .description{
+        display: none;
+        padding-bottom: 2rem;
+        line-height: 1.7;
+    }
+    .button{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        img{
+            transition: .2s;
+            transform: rotate(45deg);
+        }
+        .button-text {
+            padding-left: .7rem;
+            font-size: .8rem;
+        }
+    }
+}
+
+.card.open {
+    background-color: #231E32;
+    .title{
+        display: none;
+    }
+    .description{
+        display: block;
+    }
+    img{
+        transform: rotate(0deg);
+    }
+}
